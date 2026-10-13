@@ -1,0 +1,30 @@
+# 第一次使用：复制本文件，命名为 config.local.toml，再修改副本。
+# 只改引号里的路径，不要改左边的英文名称。# 开头的行是说明。
+# Windows 也使用 /，例如 "E:/datasets/dogspeak"。
+# 没有盘符的相对路径，从项目根目录（README.md 所在位置）开始计算。
+# 只运行用到相应材料的实验时，才需要填写该项。需要 Python 3.11 或更新版本。
+
+[paths]
+# Qwen 模型的整个文件夹，包含模型参数和配套处理文件。
+qwen_model = "models/Qwen2.5-Omni-7B"
+
+# 音频文件夹：分别放狗叫、猫叫和筛选后的其他声音。
+# 其他声音中先排除狗叫；做三类实验时，还要排除单列的猫叫。
+dog_audio = "data/dogspeak"
+cat_audio = "data/cat"
+esc50_audio = "data/esc50_negative"
+urbansound8k_audio = "data/urbansound8k_negative"
+
+# 生成 Lens 时使用的英文、简体中文文本文件；基础狗叫评测不需要。
+calibration_en = "data/calibration/fineweb_english.jsonl"
+calibration_zh = "data/calibration/fineweb2_chinese_simplified.jsonl"
+
+# 实验结果保存在哪里，通常保留默认值即可。
+outputs_root = "outputs"
+
+# 以下两项是选填的。保留 # 时，程序会在 outputs_root 下找默认文件。
+# 只有使用其他位置的文件时，才去掉对应行最前面的 # 并修改路径。
+# Lens 是分析模型内部信号的工具；搬动文件时请保留整个生成结果文件夹。
+# lens = "outputs/fit_jacobian_lens/jlens_main.pt"
+# 音频清单记录每条音频的位置和类别，可用 build_audio_manifest.py 生成。
+# manifest = "outputs/manifests/audio_manifest.csv"

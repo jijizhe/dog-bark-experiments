@@ -1,0 +1,4 @@
+-r qwen.txt
+pandas
+matplotlib
+jlens @ git+https://github.com/anthropics/jacobian-lens.git

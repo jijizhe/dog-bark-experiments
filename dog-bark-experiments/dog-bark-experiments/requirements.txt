@@ -1,0 +1,5 @@
+# Source-derived dependency inventory, not the original experiment lockfile.
+# For student-only experiments use requirements/lightweight.txt.
+# Install the appropriate PyTorch CUDA build before these requirements.
+-r requirements/lightweight.txt
+-r requirements/interpretability.txt
